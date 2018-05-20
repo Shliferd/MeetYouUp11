@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "446681058257",
+    "firebase_url": "https://meetyouup-1e012.firebaseio.com",
+    "project_id": "meetyouup-1e012",
+    "storage_bucket": "meetyouup-1e012.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446681058257:android:bdbab2126c7f7309",
+        "android_client_info": {
+          "package_name": "com.example.andrei.meetyouupv11"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446681058257-uisaje0tl1k7mf97ke5rsbtph6to9j2r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.andrei.meetyouupv11",
+            "certificate_hash": "c905abee085532a83f94b1a98211266e07764806"
+          }
+        },
+        {
+          "client_id": "446681058257-jcju1p9londv66kfboh3l922qat6io7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKDP6BRs9SyEFE5MmnQGWnTzpgRYFOKRU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446681058257-jcju1p9londv66kfboh3l922qat6io7s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
