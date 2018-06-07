@@ -3,8 +3,8 @@
     package="com.example.andrei.meetyouupv11">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -23,7 +23,8 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".SetUpProfileActivity"></activity>
+        <activity android:name=".SetUpProfileActivity" />
+        <activity android:name=".EditProfileActivity"></activity>
     </application>
 
 </manifest>

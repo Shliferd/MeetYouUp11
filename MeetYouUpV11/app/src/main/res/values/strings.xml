@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MeetYouUpV1.1</string>
+    <string-array name="dashboardRows">
+        <item>Events to attend</item>
+        <item>My groups</item>
+        <item>Your events</item>
+        <item>Search events</item>
+    </string-array>
 </resources>

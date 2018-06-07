@@ -96,7 +96,7 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
-                String date = "You was borned on: " + dayOfMonth + "/" + month + "/" + year;
+                String date = "You were borned on: " + dayOfMonth + "/" + month + "/" + year;
                 textViewSetUpDateOfBirth.setText(date);
             }
         };
@@ -163,7 +163,7 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
                 //String profileId = databaseReferenceProfiles.push().getKey();
                 String dateOfBirth = mDay + "/" + mMonth + "/" + mYear;
                 Profile newProfile = new Profile(userId, editTextSetUpSurname.getText().toString(), editTextSetUpForename.getText().toString(),
-                        editTextSetUpKeyWords.getText().toString(), dateOfBirth, editTextSetUpDescription.getText().toString(), downlaodUri);
+                        editTextSetUpKeyWords.getText().toString(), dateOfBirth, editTextSetUpDescription.getText().toString(), downlaodUri.toString());
 
 //                Intent newIntent = getIntent();
 //                String userId = newIntent.getStringExtra(RegisterActivity.USER_ID);
@@ -171,8 +171,10 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 
-                        startActivity(new Intent(SetUpProfileActivity.this, ForgotPasswordActivity.class));
+                        startActivity(new Intent(SetUpProfileActivity.this, DashboardActivity.class));
                         //finish();
+                        Toast.makeText(SetUpProfileActivity.this, "Profile saved!", Toast.LENGTH_SHORT).show();
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

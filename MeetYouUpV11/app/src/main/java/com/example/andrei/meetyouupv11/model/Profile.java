@@ -2,6 +2,7 @@ package com.example.andrei.meetyouupv11.model;
 
 import android.net.Uri;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Profile {
@@ -12,8 +13,8 @@ public class Profile {
     private String keyWords;
     private String dateOfBirth;
     private String profileDescription;
-    private Uri profilePictureUrl;
-    private List<String> friendsId;
+    private String profilePictureUrl;
+    private List<String> friendsId=new ArrayList<>();
     private float rating;
 
     public Profile() {
@@ -21,7 +22,7 @@ public class Profile {
 
     public Profile(String userId, String surname, String forename,
                    String keyWords, String dateOfBirth, String profileDescription,
-                   Uri profilePictureUrl, List<String> friendsId, float rating) {
+                   String profilePictureUrl, List<String> friendsId, float rating) {
         this.userId = userId;
         this.surname = surname;
         this.forename = forename;
@@ -34,7 +35,7 @@ public class Profile {
     }
 
     public Profile(String userId, String surname, String forename,
-                   String keyWords, String dateOfBirth, String profileDescription, Uri profilePictureUrl) {
+                   String keyWords, String dateOfBirth, String profileDescription, String profilePictureUrl) {
         this.userId = userId;
         this.surname = surname;
         this.forename = forename;
@@ -42,7 +43,8 @@ public class Profile {
         this.dateOfBirth = dateOfBirth;
         this.profileDescription = profileDescription;
         this.profilePictureUrl = profilePictureUrl;
-        this.friendsId = null;
+//        this.friendsId.add("None");
+        this.addToFriendList("None");
         this.rating = 0;
     }
 
@@ -94,11 +96,11 @@ public class Profile {
         this.profileDescription = profileDescription;
     }
 
-    public Uri getProfilePictureUrl() {
+    public String getProfilePictureUrl() {
         return profilePictureUrl;
     }
 
-    public void setProfilePictureUrl(Uri profilePictureUrl) {
+    public void setProfilePictureUrl(String profilePictureUrl) {
         this.profilePictureUrl = profilePictureUrl;
     }
 
@@ -108,6 +110,10 @@ public class Profile {
 
     public void setFriendsId(List<String> friendsId) {
         this.friendsId = friendsId;
+    }
+
+    private void addToFriendList(String newUserId) {
+        this.friendsId.add(newUserId);
     }
 
     public float getRating() {

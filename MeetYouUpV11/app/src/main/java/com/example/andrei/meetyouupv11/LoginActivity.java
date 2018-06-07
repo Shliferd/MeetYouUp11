@@ -55,10 +55,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         if (v.getId() == R.id.btnForgotPassword) {
             startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
-            finish();
+            //finish();
         } else if (v.getId() == R.id.btnRegister) {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-            finish();
+            //finish();
         } else if (v.getId() == R.id.btnLogin) {
             loginUser(editTextLoginEmail.getText().toString(), editTextLoginPassword.getText().toString());
         }

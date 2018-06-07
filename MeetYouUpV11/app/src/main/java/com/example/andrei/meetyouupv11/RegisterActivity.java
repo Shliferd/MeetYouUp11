@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         if (v.getId() == R.id.btnAlreadyRegistered) {
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-            finish();
+            //finish();
         } else if (v.getId() == R.id.btnContinueToRegistation) {
             signUpUser(editTextRegisterEmail.getText().toString(), editTextRegisterPassword.getText().toString());
         }
@@ -99,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     newIntent.putExtra(USER_EMAIL, editTextRegisterEmail.getText().toString());
                     newIntent.putExtra(USER_PASSWORD, editTextRegisterPassword.getText().toString());
                     startActivity(newIntent);
-                    finish();
+                    //finish();
 
                 } else {
                     Toast.makeText(RegisterActivity.this, "Could not login !", Toast.LENGTH_SHORT).show();

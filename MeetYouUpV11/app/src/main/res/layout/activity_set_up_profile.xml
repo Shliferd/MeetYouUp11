@@ -94,7 +94,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:background="#263238"
-            android:text="Fisish your profile" />
+            android:text="Finish your profile" />
 
 
     </LinearLayout>
