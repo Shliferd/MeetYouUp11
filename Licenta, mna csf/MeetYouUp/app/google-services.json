@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "446681058257",
+    "firebase_url": "https://meetyouup-1e012.firebaseio.com",
+    "project_id": "meetyouup-1e012",
+    "storage_bucket": "meetyouup-1e012.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446681058257:android:85a184bd80fccef6",
+        "android_client_info": {
+          "package_name": "com.example.andrei.meetyouupv10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446681058257-jcju1p9londv66kfboh3l922qat6io7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKDP6BRs9SyEFE5MmnQGWnTzpgRYFOKRU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
