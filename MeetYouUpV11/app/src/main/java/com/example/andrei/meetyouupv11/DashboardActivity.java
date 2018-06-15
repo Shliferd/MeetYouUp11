@@ -27,6 +27,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
     String[] dashboardRowNames = null;
 
+    public static final String USER_ID = "USER_ID";
+
     private FirebaseAuth firebaseAuth;
     Resources resources;
 
@@ -71,7 +73,9 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                startActivity(new Intent(DashboardActivity.this, EditProfileActivity.class));
+                Intent newIntent = new Intent(DashboardActivity.this, EditProfileActivity.class);
+                newIntent.putExtra(USER_ID, firebaseAuth.getCurrentUser().getUid());
+                startActivity(newIntent);
                 return true;
         }
 

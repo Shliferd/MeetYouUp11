@@ -2,13 +2,19 @@ package com.example.andrei.meetyouupv11;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 /*
 RecyclerView.Adapter
@@ -33,17 +39,44 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DashboardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DashboardViewHolder holder, final int position) {
         String currentRowString = dashboardRowNames[position];
         holder.rowDescTextView.setText(currentRowString);
-        if (position == 0)
-            holder.thumbnailImage.setImageDrawable(mCtx.getResources().getDrawable(R.drawable.planner));
-        if (position == 1)
-            holder.thumbnailImage.setImageDrawable(mCtx.getResources().getDrawable(R.drawable.groupsdashboard));
-        if (position == 2)
-            holder.thumbnailImage.setImageDrawable(mCtx.getResources().getDrawable(R.drawable.myevents));
-        if (position == 3)
-            holder.thumbnailImage.setImageDrawable(mCtx.getResources().getDrawable(R.drawable.searchevent));
+
+        switch (position) {
+            case 0:
+                Picasso.get().load(R.drawable.planner).fit().centerCrop().into(holder.thumbnailImage);
+                break;
+            case 1:
+                Picasso.get().load(R.drawable.groupdashboard).fit().centerCrop().into(holder.thumbnailImage);
+                break;
+            case 2:
+                Picasso.get().load(R.drawable.myevents).fit().centerCrop().into(holder.thumbnailImage);
+                break;
+            case 3:
+                Picasso.get().load(R.drawable.searchevent).fit().centerCrop().into(holder.thumbnailImage);
+                break;
+        }
+
+        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (position) {
+                    case 0:
+                        Toast.makeText(mCtx, "Not implemeted yet!", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        mCtx.startActivity(new Intent(mCtx, GroupActivity.class));
+                        break;
+                    case 2:
+                        Toast.makeText(mCtx, "Not implemeted yet!", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 3:
+                        Toast.makeText(mCtx, "Not implemeted yet!", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
     }
 
     @Override
@@ -54,12 +87,14 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     class DashboardViewHolder extends RecyclerView.ViewHolder {
         ImageView thumbnailImage;
         TextView rowDescTextView;
+        RelativeLayout parentLayout;
 
         public DashboardViewHolder(View itemView) {
             super(itemView);
 
             thumbnailImage = itemView.findViewById(R.id.thumbnailImage);
             rowDescTextView = itemView.findViewById(R.id.rowDescTextView);
+            parentLayout = itemView.findViewById(R.id.parentLayoutDashboard);
         }
     }
 }

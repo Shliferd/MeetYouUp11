@@ -1,29 +1,53 @@
 package com.example.andrei.meetyouupv11.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Group {
 
-    private String groupId;
+    private String adminId;
     private String groupName;
     private String groupDescription;
     private int numberOfMembers;
-    private String[] membersId;
+    private List<String> membersId = new ArrayList<>();
+    private List<String> listOfEventsInGroup = new ArrayList<>();
+    private String groupPicture;
 
-    public Group(){}
+    public Group() {
+    }
 
-    public Group(String groupId, String name, String groupDescription, int numberOfMembers, String[] membersId) {
-        this.groupId = groupId;
+    public Group(String adminId, String name, String groupDescription, String groupPicture,
+                 List<String> membersId, List<String> listOfEventsInGroup) {
+        this.adminId = adminId;
         this.groupName = name;
         this.groupDescription = groupDescription;
-        this.numberOfMembers = numberOfMembers;
+        this.numberOfMembers = 1;
+        this.groupPicture = groupPicture;
         this.membersId = membersId;
+        this.listOfEventsInGroup = listOfEventsInGroup;
     }
 
-    public String getGroupId() {
-        return groupId;
+    public Group(String adminId, String name, String groupDescription, String groupPicture) {
+        this.adminId = adminId;
+        this.groupName = name;
+        this.groupDescription = groupDescription;
+        this.numberOfMembers = 1;
+        this.groupPicture = groupPicture;
+        this.addMembersToGroup("None");
+        this.addEventToListGroup("None");
+
     }
 
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
+    public Group(Group other) {
+        this.adminId = other.getAdminId();
+        this.groupName = other.getGroupName();
+        this.groupDescription = other.getGroupDescription();
+        this.numberOfMembers = other.getNumberOfMembers();
+        this.groupPicture = other.getGroupPicture();
+        this.membersId.clear();
+        this.membersId.addAll(other.getMembersId());
+        this.listOfEventsInGroup.clear();
+        this.listOfEventsInGroup.addAll(other.getListOfEventsInGroup());
     }
 
     public String getGroupName() {
@@ -50,11 +74,57 @@ public class Group {
         this.numberOfMembers = numberOfMembers;
     }
 
-    public String[] getMembersId() {
+    public List<String> getMembersId() {
         return membersId;
     }
 
-    public void setMembersId(String[] membersId) {
+    public void setMembersId(List<String> membersId) {
         this.membersId = membersId;
+    }
+
+    public List<String> getListOfEventsInGroup() {
+        return listOfEventsInGroup;
+    }
+
+    public void setListOfEventsInGroup(List<String> listOfEventsInGroup) {
+        this.listOfEventsInGroup = listOfEventsInGroup;
+    }
+
+    public String getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(String adminId) {
+        this.adminId = adminId;
+    }
+
+    public String getGroupPicture() {
+        return groupPicture;
+    }
+
+    public void setGroupPicture(String groupPicture) {
+        this.groupPicture = groupPicture;
+    }
+
+    public void addMembersToGroup(String newUserId) {
+        if (newUserId.equals("None") && this.membersId.size() == 0)
+            this.membersId.add(newUserId);
+        else if (this.membersId.get(0).equals("None") && !newUserId.equals("None")) {
+            this.membersId.clear();
+            this.membersId.add(newUserId);
+        } else if (!this.membersId.get(0).equals("None") && !membersId.contains(newUserId)) {
+            this.membersId.add(newUserId);
+        }
+    }
+
+    public void addEventToListGroup(String eventId) {
+        if (eventId.equals("None") && this.listOfEventsInGroup.size() == 0) {
+            this.listOfEventsInGroup.add(eventId);
+        } else if (this.listOfEventsInGroup.get(0).equals("None") && !eventId.equals("None")) {
+            this.listOfEventsInGroup.clear();
+            this.listOfEventsInGroup.add(eventId);
+        } else if (!this.listOfEventsInGroup.get(0).equals("None") && !listOfEventsInGroup.contains(eventId)) {
+            this.listOfEventsInGroup.add(eventId);
+        }
     }
 }

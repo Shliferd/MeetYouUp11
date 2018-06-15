@@ -1,75 +1,82 @@
 package com.example.andrei.meetyouupv11.model;
 
-import android.net.Uri;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Profile {
 
     private String userId;
-    private String surname;
-    private String forename;
+    private String name;
     private String keyWords;
     private String dateOfBirth;
     private String profileDescription;
     private String profilePictureUrl;
-    private List<String> friendsId=new ArrayList<>();
-    private float rating;
+    private List<String> pendingEvents = new ArrayList<>();
+    private List<String> listOfGroups = new ArrayList<>();
+    private List<String> listOfEvents = new ArrayList<>();
 
     public Profile() {
     }
 
-    public Profile(String userId, String surname, String forename,
-                   String keyWords, String dateOfBirth, String profileDescription,
-                   String profilePictureUrl, List<String> friendsId, float rating) {
+    public Profile(String userId, String name, String keyWords, String dateOfBirth, String profileDescription,
+                   String profilePictureUrl, List<String> pendingEvents, List<String> listOfGroups,
+                   List<String> listOfEvents) {
+
         this.userId = userId;
-        this.surname = surname;
-        this.forename = forename;
+        this.name = name;
         this.keyWords = keyWords;
         this.dateOfBirth = dateOfBirth;
         this.profileDescription = profileDescription;
         this.profilePictureUrl = profilePictureUrl;
-        this.friendsId = friendsId;
-        this.rating = rating;
+        this.pendingEvents = pendingEvents;
+        this.listOfGroups = listOfGroups;
+        this.listOfEvents = listOfEvents;
     }
 
-    public Profile(String userId, String surname, String forename,
-                   String keyWords, String dateOfBirth, String profileDescription, String profilePictureUrl) {
+    public Profile(String userId, String name, String keyWords, String dateOfBirth, String profileDescription, String profilePictureUrl) {
+
         this.userId = userId;
-        this.surname = surname;
-        this.forename = forename;
+        this.name = name;
         this.keyWords = keyWords;
         this.dateOfBirth = dateOfBirth;
         this.profileDescription = profileDescription;
         this.profilePictureUrl = profilePictureUrl;
-//        this.friendsId.add("None");
-        this.addToFriendList("None");
-        this.rating = 0;
+        this.addGroup("None");
+        this.addEventsAttendance("None");
+        this.addToPendingEventsList("None");
+
+    }
+
+    public Profile(Profile other) {
+
+        this.userId = other.getUserId();
+        this.name = other.getName();
+        this.keyWords = other.getKeyWords();
+        this.dateOfBirth = other.getDateOfBirth();
+        this.profileDescription = other.getProfileDescription();
+        this.profilePictureUrl = other.getProfilePictureUrl();
+        this.pendingEvents.clear();
+        this.pendingEvents.addAll(other.getPendingEvents());
+        this.listOfGroups.clear();
+        this.listOfGroups.addAll(other.getListOfGroups());
+        this.listOfEvents.clear();
+        this.listOfEvents.addAll(other.getListOfEvents());
     }
 
     public String getUserId() {
         return userId;
     }
 
-    public void setUserId(String profileId) {
-        this.userId = profileId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getName() {
+        return name;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getForename() {
-        return forename;
-    }
-
-    public void setForename(String forename) {
-        this.forename = forename;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getKeyWords() {
@@ -104,23 +111,60 @@ public class Profile {
         this.profilePictureUrl = profilePictureUrl;
     }
 
-    public List<String> getFriendsId() {
-        return friendsId;
+    public List<String> getPendingEvents() {
+        return pendingEvents;
     }
 
-    public void setFriendsId(List<String> friendsId) {
-        this.friendsId = friendsId;
+    public void setPendingEvents(List<String> pendingEvents) {
+        this.pendingEvents = pendingEvents;
     }
 
-    private void addToFriendList(String newUserId) {
-        this.friendsId.add(newUserId);
+    public List<String> getListOfEvents() {
+        return listOfEvents;
     }
 
-    public float getRating() {
-        return rating;
+    public void setListOfEvents(List<String> listOfEvents) {
+        this.listOfEvents = listOfEvents;
     }
 
-    public void setRating(float rating) {
-        this.rating = rating;
+    public List<String> getListOfGroups() {
+        return listOfGroups;
+    }
+
+    public void setListOfGroups(List<String> listOfGroups) {
+        this.listOfGroups = listOfGroups;
+    }
+
+    public void addToPendingEventsList(String eventId) {
+        if (eventId.equals("None") && this.pendingEvents.size() == 0)
+            this.pendingEvents.add(eventId);
+        else if (this.pendingEvents.get(0).equals("None") && !eventId.equals("None")) {
+            this.pendingEvents.clear();
+            this.pendingEvents.add(eventId);
+        } else if (!this.pendingEvents.get(0).equals("None") && !this.pendingEvents.contains(eventId)) {
+            this.pendingEvents.add(eventId);
+        }
+    }
+
+    public void addGroup(String groupId) {
+        if (groupId.equals("None") && this.listOfGroups.size() == 0) {
+            this.listOfGroups.add(groupId);
+        } else if (this.listOfGroups.get(0).equals("None") && !groupId.equals("None")) {
+            this.listOfGroups.clear();
+            this.listOfGroups.add(groupId);
+        } else if (!this.listOfGroups.get(0).equals("None") && !listOfGroups.contains(groupId)) {
+            this.listOfGroups.add(groupId);
+        }
+    }
+
+    public void addEventsAttendance(String eventId) {
+        if (eventId.equals("None") && this.listOfEvents.size() == 0) {
+            this.listOfEvents.add(eventId);
+        } else if (this.listOfEvents.get(0).equals("None") && !eventId.equals("None")) {
+            this.listOfEvents.clear();
+            this.listOfEvents.add(eventId);
+        } else if (!this.listOfEvents.get(0).equals("None") && !listOfEvents.contains(eventId)) {
+            this.listOfEvents.add(eventId);
+        }
     }
 }

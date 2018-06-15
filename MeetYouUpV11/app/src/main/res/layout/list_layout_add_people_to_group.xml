@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/frameLayoutAddToGroup"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/profilePicAddToGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/deproba" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_round_profile_pic" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/nameAddPeopleToGroup"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@id/frameLayoutAddToGroup"
+        android:text="Andrei Matea"
+        android:textColor="#555555"
+        android:textSize="25dp" />
+
+    <ImageButton
+        android:id="@+id/iconAddPeopleToGroup"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/nameAddPeopleToGroup"
+        android:background="@drawable/addicon" />
+
+</RelativeLayout>

@@ -24,7 +24,10 @@
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SetUpProfileActivity" />
-        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".GroupActivity" />
+        <activity android:name=".CreateGroupActivity" />
+        <activity android:name=".AddPeopleToGroupActivity"></activity>
     </application>
 
 </manifest>

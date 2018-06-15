@@ -50,9 +50,8 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
     private ImageView imageViewSetUpProfilePic;
     private Uri downlaodUri;
     private FirebaseAuth firebaseAuth;
-    private EditText editTextSetUpSurname, editTextSetUpForename, editTextSetUpDescription, editTextSetUpKeyWords;
+    private EditText editTextSetUpName, editTextSetUpDescription, editTextSetUpKeyWords;
     private DatabaseReference databaseReferenceProfiles;
-    private String mEmail, mPassword;
 
 
     @Override
@@ -65,8 +64,7 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
 
         imageViewSetUpProfilePic = findViewById(R.id.imageViewSetUpProfilePic);
         textViewSetUpWelcome = findViewById(R.id.textViewSetUpWelcome);
-        editTextSetUpSurname = findViewById(R.id.editTextSetUpSurname);
-        editTextSetUpForename = findViewById(R.id.editTextSetUpForename);
+        editTextSetUpName = findViewById(R.id.editTextSetUpName);
         editTextSetUpDescription = findViewById(R.id.editTextSetUpDescription);
         editTextSetUpKeyWords = findViewById(R.id.editTextSetUpKeyWords);
         btnFinishSetUp = findViewById(R.id.btnFinishSetUp);
@@ -87,7 +85,6 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
                 DatePickerDialog dialog = new DatePickerDialog(SetUpProfileActivity.this,
                         AlertDialog.THEME_HOLO_DARK,
                         onDateSetListener, mYear, mMonth, mDay);
-                //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
             }
         });
@@ -112,11 +109,6 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
 
         btnFinishSetUp.setOnClickListener(this);
 
-        Intent newIntent = getIntent();
-        String userId = newIntent.getStringExtra(RegisterActivity.USER_ID);
-        mEmail = newIntent.getStringExtra(RegisterActivity.USER_EMAIL);
-        mPassword = newIntent.getStringExtra(RegisterActivity.USER_PASSWORD);
-
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReferenceProfiles = FirebaseDatabase.getInstance().getReference().child("profiles");
 
@@ -136,16 +128,20 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
             mProgressDialog.show();
 
             Uri uri = data.getData();
-            StorageReference filePath = mStorage.child("Photos").child(uri.getLastPathSegment());
+            final StorageReference filePath = mStorage.child("Photos").child(uri.getLastPathSegment());
 
             filePath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     mProgressDialog.dismiss();
-                    downlaodUri = taskSnapshot.getDownloadUrl();
-                    Picasso.get().load(downlaodUri).fit().centerCrop().into(imageViewSetUpProfilePic);
-                    Toast.makeText(SetUpProfileActivity.this, "Uploading finished", Toast.LENGTH_SHORT).show();
-
+                    filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            downlaodUri = uri;
+                            Picasso.get().load(downlaodUri).fit().centerCrop().into(imageViewSetUpProfilePic);
+                            Toast.makeText(SetUpProfileActivity.this, "Uploading finished", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             });
         }
@@ -160,19 +156,16 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
                 Intent newIntent = getIntent();
                 String userId = newIntent.getStringExtra(RegisterActivity.USER_ID);
 
-                //String profileId = databaseReferenceProfiles.push().getKey();
                 String dateOfBirth = mDay + "/" + mMonth + "/" + mYear;
-                Profile newProfile = new Profile(userId, editTextSetUpSurname.getText().toString(), editTextSetUpForename.getText().toString(),
-                        editTextSetUpKeyWords.getText().toString(), dateOfBirth, editTextSetUpDescription.getText().toString(), downlaodUri.toString());
+                Profile newProfile = new Profile(firebaseAuth.getCurrentUser().getUid(), editTextSetUpName.getText().toString(), editTextSetUpKeyWords.getText().toString(),
+                        dateOfBirth, editTextSetUpDescription.getText().toString(),
+                        downlaodUri.toString());
 
-//                Intent newIntent = getIntent();
-//                String userId = newIntent.getStringExtra(RegisterActivity.USER_ID);
                 databaseReferenceProfiles.child(userId).setValue(newProfile).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 
                         startActivity(new Intent(SetUpProfileActivity.this, DashboardActivity.class));
-                        //finish();
                         Toast.makeText(SetUpProfileActivity.this, "Profile saved!", Toast.LENGTH_SHORT).show();
 
                     }
@@ -183,8 +176,6 @@ public class SetUpProfileActivity extends AppCompatActivity implements View.OnCl
                     }
                 });
 
-//                startActivity(new Intent(SetUpProfileActivity.this, DashboardActivity.class));
-//                finish();
             }
         }
     }

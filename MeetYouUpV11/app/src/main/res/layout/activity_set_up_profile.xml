@@ -21,21 +21,11 @@
             android:layout_marginHorizontal="50dp"/>
 
         <EditText
-            android:id="@+id/editTextSetUpSurname"
+            android:id="@+id/editTextSetUpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
-            android:hint="Enter your surname"
-            android:inputType="text"
-            android:maxLines="1"
-            android:padding="10dp" />
-
-        <EditText
-            android:id="@+id/editTextSetUpForename"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
-            android:hint="Enter your forename"
+            android:hint="Enter your name"
             android:inputType="text"
             android:maxLines="1"
             android:padding="10dp" />
