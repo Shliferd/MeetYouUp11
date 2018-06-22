@@ -1,42 +1,62 @@
 package com.example.andrei.meetyouupv11.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BasicEvent implements Event {
 
-    private String eventId;
     private String userCreatorId;
     private String eventName;
-    private List<String> usersToParticipate;
+    private List<String> goingUsers = new ArrayList<>();
+    private List<String> declinedUsers = new ArrayList<>();
+    private List<String> pendingAdminAccept = new ArrayList<>();
     private String eventKeyWords;
     private String eventDate;
     private String eventDescription;
     private String eventLocation;
+    private String eventPicture;
+    private boolean isShareable;
+    private int numberOfParticipants;
 
-    public BasicEvent(String eventId, String userCreatorId, String eventName, List<String> usersToParticipate,
-                      String eventKeyWords, String eventDate, String eventDescription, String eventLocation) {
-        this.eventId = eventId;
+    public BasicEvent() {
+    }
+
+    public BasicEvent(String userCreatorId, String eventName, String eventKeyWords,
+                      String eventDate, String eventDescription, String eventLocation, String eventPicture) {
         this.userCreatorId = userCreatorId;
         this.eventName = eventName;
-        this.usersToParticipate = usersToParticipate;
         this.eventKeyWords = eventKeyWords;
         this.eventDate = eventDate;
         this.eventDescription = eventDescription;
         this.eventLocation = eventLocation;
+        this.eventPicture = eventPicture;
+        this.addToGoingUsers("None");
+        this.addToDeclinedUers("None");
+        this.addToPendingAdminAccept("None");
     }
 
-
-    @Override
-    public void addToParticipants(String userId) {
-        usersToParticipate.add(userId);
+    public void setShareable(boolean shareable) {
+        isShareable = shareable;
     }
 
-    public String getEventId() {
-        return eventId;
+    public boolean isShareable() {
+        return isShareable;
     }
 
-    public void setEventId(String eventId) {
-        this.eventId = eventId;
+    public int getNumberOfParticipants() {
+        return numberOfParticipants;
+    }
+
+    public void setNumberOfParticipants(int numberOfParticipants) {
+        this.numberOfParticipants = numberOfParticipants;
+    }
+
+    public String getUserCreatorId() {
+        return userCreatorId;
+    }
+
+    public void setUserCreatorId(String userCreatorId) {
+        this.userCreatorId = userCreatorId;
     }
 
     public String getEventName() {
@@ -47,12 +67,28 @@ public class BasicEvent implements Event {
         this.eventName = eventName;
     }
 
-    public List<String> getUsersToParticipate() {
-        return usersToParticipate;
+    public List<String> getGoingUsers() {
+        return goingUsers;
     }
 
-    public void setUsersToParticipate(List<String> usersToParticipate) {
-        this.usersToParticipate = usersToParticipate;
+    public void setGoingUsers(List<String> goingUsers) {
+        this.goingUsers = goingUsers;
+    }
+
+    public List<String> getDeclinedUsers() {
+        return declinedUsers;
+    }
+
+    public void setDeclinedUsers(List<String> declinedUsers) {
+        this.declinedUsers = declinedUsers;
+    }
+
+    public List<String> getPendingAdminAccept() {
+        return pendingAdminAccept;
+    }
+
+    public void setPendingAdminAccept(List<String> pendingAdminAccept) {
+        this.pendingAdminAccept = pendingAdminAccept;
     }
 
     public String getEventKeyWords() {
@@ -87,11 +123,60 @@ public class BasicEvent implements Event {
         this.eventLocation = eventLocation;
     }
 
-    public String getUserCreatorId() {
-        return userCreatorId;
+    public String getEventPicture() {
+        return eventPicture;
     }
 
-    public void setUserCreatorId(String userCreatorId) {
-        this.userCreatorId = userCreatorId;
+    public void setEventPicture(String eventPicture) {
+        this.eventPicture = eventPicture;
     }
+
+    @Override
+    public void wantToParticipate(String userId) {
+        goingUsers.add(userId);
+    }
+
+    @Override
+    public void setIsShareable() {
+        this.setShareable(false);
+    }
+
+    @Override
+    public void setNumberLimit(int numberLimit) {
+        this.setNumberOfParticipants(1000);
+    }
+
+    public void addToGoingUsers(String userId) {
+        if (userId.equals("None") && this.goingUsers.size() == 0)
+            this.goingUsers.add(userId);
+        else if (this.goingUsers.get(0).equals("None") && !userId.equals("None")) {
+            this.goingUsers.clear();
+            this.goingUsers.add(userId);
+        } else if (!this.goingUsers.get(0).equals("None") && !this.goingUsers.contains(userId)) {
+            this.goingUsers.add(userId);
+        }
+    }
+
+    public void addToDeclinedUers(String userId) {
+        if (userId.equals("None") && this.declinedUsers.size() == 0)
+            this.declinedUsers.add(userId);
+        else if (this.declinedUsers.get(0).equals("None") && !userId.equals("None")) {
+            this.declinedUsers.clear();
+            this.declinedUsers.add(userId);
+        } else if (!this.declinedUsers.get(0).equals("None") && !this.declinedUsers.contains(userId)) {
+            this.declinedUsers.add(userId);
+        }
+    }
+
+    public void addToPendingAdminAccept(String userId) {
+        if (userId.equals("None") && this.pendingAdminAccept.size() == 0)
+            this.pendingAdminAccept.add(userId);
+        else if (this.pendingAdminAccept.get(0).equals("None") && !userId.equals("None")) {
+            this.pendingAdminAccept.clear();
+            this.pendingAdminAccept.add(userId);
+        } else if (!this.pendingAdminAccept.get(0).equals("None") && !this.pendingAdminAccept.contains(userId)) {
+            this.pendingAdminAccept.add(userId);
+        }
+    }
+
 }

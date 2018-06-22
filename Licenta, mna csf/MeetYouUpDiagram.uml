@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example.andrei.meetyouupv11.model.AcceptEvent</OriginalElement>
+  <nodes>
+    <node x="154.0" y="0.0">android.content.Context</node>
+    <node x="335.0" y="984.0">com.example.andrei.meetyouupv11.model.EventDecorator</node>
+    <node x="723.0" y="158.0">android.view.KeyEvent.Callback</node>
+    <node x="313.96875" y="831.0">com.example.andrei.meetyouupv11.ForgotPasswordActivity</node>
+    <node x="760.0" y="905.0">com.example.andrei.meetyouupv11.model.Group</node>
+    <node x="756.5480769230768" y="326.0">android.support.v4.app.ActivityCompat.RequestPermissionsRequestCodeValidator</node>
+    <node x="514.0" y="831.0">com.example.andrei.meetyouupv11.EditProfileActivity</node>
+    <node x="307.0" y="79.0">android.content.ComponentCallbacks</node>
+    <node x="902.0480769230768" y="484.0">android.arch.lifecycle.ViewModelStoreOwner</node>
+    <node x="382.61858974358955" y="326.0">android.support.annotation.RequiresApi</node>
+    <node x="836.0" y="158.0">android.view.LayoutInflater.Factory2</node>
+    <node x="411.86858974358955" y="405.0">android.support.v4.app.BaseFragmentActivityApi14</node>
+    <node x="513.6185897435896" y="326.0">android.support.v4.app.SupportActivity</node>
+    <node x="1157.0" y="831.0">com.example.andrei.meetyouupv11.RegisterActivity</node>
+    <node x="1480.0" y="831.0">com.example.andrei.meetyouupv11.LoginActivity</node>
+    <node x="503.49358974358955" y="484.0">android.support.v4.app.BaseFragmentActivityApi16</node>
+    <node x="0.0" y="158.0">android.view.Window.Callback</node>
+    <node x="992.0" y="831.0">com.example.andrei.meetyouupv11.DashboardActivity</node>
+    <node x="429.25" y="905.0">com.example.andrei.meetyouupv11.model.Event</node>
+    <node x="113.0" y="158.0">android.view.ContextThemeWrapper</node>
+    <node x="84.5" y="905.0">android.support.v7.widget.RecyclerView.ViewHolder</node>
+    <node x="1167.0" y="563.0">android.support.v4.app.TaskStackBuilder.SupportParentable</node>
+    <node x="1618.0" y="831.0">com.example.andrei.meetyouupv11.AddPeopleToGroupActivity</node>
+    <node x="131.5" y="79.0">android.content.ContextWrapper</node>
+    <node x="676.0" y="831.0">com.example.andrei.meetyouupv11.GroupActivity</node>
+    <node x="492.0" y="158.0">android.view.View.OnCreateContextMenuListener</node>
+    <node x="886.0" y="905.0">com.example.andrei.meetyouupv11.model.User</node>
+    <node x="1307.0" y="831.0">com.example.andrei.meetyouupv11.SetUpProfileActivity</node>
+    <node x="817.0" y="831.0">com.example.andrei.meetyouupv11.CreateGroupActivity</node>
+    <node x="633.0" y="905.0">com.example.andrei.meetyouupv11.model.Profile</node>
+    <node x="1091.0480769230767" y="484.0">android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback</node>
+    <node x="94.0" y="984.0">android.support.v7.widget.RecyclerView.Adapter</node>
+    <node x="1009.0" y="563.0">android.support.v7.app.ActionBarDrawerToggle.DelegateProvider</node>
+    <node x="1333.0" y="563.0">android.support.v7.app.AppCompatCallback</node>
+    <node x="0.0" y="1063.0">com.example.andrei.meetyouupv11.GroupAdapter</node>
+    <node x="556.7019230769229" y="247.0">android.arch.lifecycle.LifecycleOwner</node>
+    <node x="1082.5" y="642.0">android.support.v7.app.AppCompatActivity</node>
+    <node x="705.7019230769229" y="247.0">android.support.annotation.RestrictTo</node>
+    <node x="304.0" y="158.0">android.content.ComponentCallbacks2</node>
+    <node x="839.0" y="79.0">android.view.LayoutInflater.Factory</node>
+    <node x="342.5" y="1063.0">com.example.andrei.meetyouupv11.model.AcceptEvent</node>
+    <node x="850.0" y="563.0">android.support.v4.app.FragmentActivity</node>
+    <node x="484.0" y="984.0">com.example.andrei.meetyouupv11.model.BasicEvent</node>
+    <node x="448.70192307692287" y="247.0">android.app.Activity</node>
+    <node x="143.0" y="1063.0">com.example.andrei.meetyouupv11.DashboardAdapter</node>
+    <node x="864.34375" y="642.0">android.view.View.OnClickListener</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="android.app.Activity" target="android.view.View.OnCreateContextMenuListener">
+      <point x="7.3333333333332575" y="-14.5" />
+      <point x="500.0352564102561" y="207.0" />
+      <point x="597.5" y="207.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.model.AcceptEvent" target="com.example.andrei.meetyouupv11.model.EventDecorator">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.DashboardActivity" target="android.support.v7.app.AppCompatActivity">
+      <point x="36.25" y="-14.5" />
+      <point x="1100.75" y="811.0" />
+      <point x="1159.0" y="811.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.RegisterActivity" target="android.view.View.OnClickListener">
+      <point x="-32.5" y="-14.5" />
+      <point x="1189.5" y="751.0" />
+      <point x="954.40625" y="751.0" />
+      <point x="24.5625" y="14.5" />
+    </edge>
+    <edge source="android.app.Activity" target="android.view.ContextThemeWrapper">
+      <point x="-22.0" y="-14.5" />
+      <point x="470.70192307692287" y="217.0" />
+      <point x="198.5" y="217.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.FragmentActivity" target="android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback">
+      <point x="52.125" y="-14.5" />
+      <point x="971.625" y="543.0" />
+      <point x="1214.0480769230767" y="543.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.app.Activity" target="android.view.Window.Callback">
+      <point x="-36.66666666666663" y="-14.5" />
+      <point x="456.03525641025624" y="227.0" />
+      <point x="46.5" y="227.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.app.Activity" target="android.content.ComponentCallbacks2">
+      <point x="-7.3333333333332575" y="-14.5" />
+      <point x="485.3685897435896" y="207.0" />
+      <point x="388.0" y="207.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.model.BasicEvent" target="com.example.andrei.meetyouupv11.model.Event">
+      <point x="0.0" y="-14.5" />
+      <point x="536.0" y="959.0" />
+      <point x="487.0" y="959.0" />
+      <point x="19.25" y="14.5" />
+    </edge>
+    <edge source="android.support.v7.widget.RecyclerView.Adapter" target="android.support.v7.widget.RecyclerView.ViewHolder">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.SupportActivity" target="android.app.Activity">
+      <point x="-43.33333333333337" y="-14.5" />
+      <point x="535.2852564102561" y="306.0" />
+      <point x="492.70192307692287" y="306.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.view.LayoutInflater.Factory2" target="android.view.LayoutInflater.Factory">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v7.app.AppCompatActivity" target="android.support.v7.app.ActionBarDrawerToggle.DelegateProvider">
+      <point x="-19.125" y="-14.5" />
+      <point x="1139.875" y="612.0" />
+      <point x="1078.0" y="612.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v7.app.AppCompatActivity" target="android.support.v4.app.TaskStackBuilder.SupportParentable">
+      <point x="19.125" y="-14.5" />
+      <point x="1178.125" y="612.0" />
+      <point x="1240.0" y="612.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.BaseFragmentActivityApi14" target="android.support.v4.app.SupportActivity">
+      <point x="48.25" y="-14.5" />
+      <point x="556.6185897435896" y="380.0" />
+      <point x="578.6185897435896" y="380.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.app.Activity" target="android.view.KeyEvent.Callback">
+      <point x="22.0" y="-14.5" />
+      <point x="514.7019230769229" y="217.0" />
+      <point x="769.5" y="217.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.AddPeopleToGroupActivity" target="android.support.v7.app.AppCompatActivity">
+      <point x="0.0" y="-14.5" />
+      <point x="1714.5" y="691.0" />
+      <point x="1227.0" y="691.0" />
+      <point x="68.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.LoginActivity" target="android.support.v7.app.AppCompatActivity">
+      <point x="29.5" y="-14.5" />
+      <point x="1568.5" y="701.0" />
+      <point x="1210.0" y="701.0" />
+      <point x="51.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.ForgotPasswordActivity" target="android.view.View.OnClickListener">
+      <point x="-43.25" y="-14.5" />
+      <point x="357.21875" y="731.0" />
+      <point x="872.53125" y="731.0" />
+      <point x="-57.3125" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.FragmentActivity" target="android.support.v4.app.ActivityCompat.RequestPermissionsRequestCodeValidator">
+      <point x="-17.375" y="-14.5" />
+      <point x="902.125" y="543.0" />
+      <point x="891.5480769230768" y="543.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.model.EventDecorator" target="com.example.andrei.meetyouupv11.model.Event">
+      <point x="0.0" y="-14.5" />
+      <point x="399.5" y="959.0" />
+      <point x="448.5" y="959.0" />
+      <point x="-19.25" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.CreateGroupActivity" target="android.view.View.OnClickListener">
+      <point x="-38.75" y="-14.5" />
+      <point x="855.75" y="761.0" />
+      <point x="921.65625" y="761.0" />
+      <point x="-8.1875" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.GroupActivity" target="android.view.View.OnClickListener">
+      <point x="-30.25" y="-14.5" />
+      <point x="706.25" y="751.0" />
+      <point x="905.28125" y="751.0" />
+      <point x="-24.5625" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.SupportActivity" target="android.support.annotation.RestrictTo">
+      <point x="43.33333333333326" y="-14.5" />
+      <point x="621.9519230769229" y="306.0" />
+      <point x="722.5352564102561" y="306.0" />
+      <point x="-33.66666666666674" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.DashboardActivity" target="android.view.View.OnClickListener">
+      <point x="-36.25" y="-14.5" />
+      <point x="1028.25" y="761.0" />
+      <point x="938.03125" y="761.0" />
+      <point x="8.1875" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.GroupActivity" target="android.support.v7.app.AppCompatActivity">
+      <point x="30.25" y="-14.5" />
+      <point x="766.75" y="791.0" />
+      <point x="1125.0" y="791.0" />
+      <point x="-34.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.RegisterActivity" target="android.support.v7.app.AppCompatActivity">
+      <point x="32.5" y="-14.5" />
+      <point x="1254.5" y="741.0" />
+      <point x="1176.0" y="741.0" />
+      <point x="17.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v7.app.AppCompatActivity" target="android.support.v7.app.AppCompatCallback">
+      <point x="57.375" y="-14.5" />
+      <point x="1216.375" y="622.0" />
+      <point x="1412.0" y="622.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.SupportActivity" target="android.arch.lifecycle.LifecycleOwner">
+      <point x="0.0" y="-14.5" />
+      <point x="578.6185897435896" y="296.0" />
+      <point x="621.2019230769229" y="296.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v7.app.AppCompatActivity" target="android.support.v4.app.FragmentActivity">
+      <point x="-57.375" y="-14.5" />
+      <point x="1101.625" y="622.0" />
+      <point x="919.5" y="622.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.BaseFragmentActivityApi16" target="android.support.v4.app.BaseFragmentActivityApi14">
+      <point x="-48.25" y="-14.5" />
+      <point x="551.7435897435896" y="459.0" />
+      <point x="508.36858974358955" y="459.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.app.Activity" target="android.view.LayoutInflater.Factory2">
+      <point x="36.66666666666674" y="-14.5" />
+      <point x="529.3685897435896" y="227.0" />
+      <point x="882.5" y="227.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.FragmentActivity" target="android.support.v4.app.BaseFragmentActivityApi16">
+      <point x="-52.125" y="-14.5" />
+      <point x="867.375" y="543.0" />
+      <point x="599.9935897435896" y="543.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.ActivityCompat.RequestPermissionsRequestCodeValidator" target="android.support.annotation.RestrictTo">
+      <point x="0.0" y="-14.5" />
+      <point x="891.5480769230768" y="306.0" />
+      <point x="789.8685897435896" y="306.0" />
+      <point x="33.66666666666674" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.BaseFragmentActivityApi16" target="android.support.annotation.RestrictTo">
+      <point x="48.25" y="-14.5" />
+      <point x="648.2435897435896" y="459.0" />
+      <point x="746.0480769230768" y="459.0" />
+      <point x="746.0480769230768" y="306.0" />
+      <point x="756.2019230769229" y="306.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.DashboardAdapter" target="android.support.v7.widget.RecyclerView.Adapter">
+      <point x="0.0" y="-14.5" />
+      <point x="216.5" y="1038.0" />
+      <point x="161.5" y="1038.0" />
+      <point x="22.5" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.SetUpProfileActivity" target="android.view.View.OnClickListener">
+      <point x="-38.25" y="-14.5" />
+      <point x="1345.25" y="731.0" />
+      <point x="970.78125" y="731.0" />
+      <point x="40.9375" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.CreateGroupActivity" target="android.support.v7.app.AppCompatActivity">
+      <point x="38.75" y="-14.5" />
+      <point x="933.25" y="801.0" />
+      <point x="1142.0" y="801.0" />
+      <point x="-17.0" y="14.5" />
+    </edge>
+    <edge source="android.view.ContextThemeWrapper" target="android.content.ContextWrapper">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.EditProfileActivity" target="android.view.View.OnClickListener">
+      <point x="-35.5" y="-14.5" />
+      <point x="549.5" y="741.0" />
+      <point x="888.90625" y="741.0" />
+      <point x="-40.9375" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.LoginActivity" target="android.view.View.OnClickListener">
+      <point x="-29.5" y="-14.5" />
+      <point x="1509.5" y="711.0" />
+      <point x="987.15625" y="711.0" />
+      <point x="57.3125" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.FragmentActivity" target="android.arch.lifecycle.ViewModelStoreOwner">
+      <point x="17.375" y="-14.5" />
+      <point x="936.875" y="533.0" />
+      <point x="986.5480769230768" y="533.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.support.v4.app.BaseFragmentActivityApi14" target="android.support.annotation.RequiresApi">
+      <point x="-48.25" y="-14.5" />
+      <point x="460.11858974358955" y="380.0" />
+      <point x="438.11858974358955" y="380.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="android.content.ComponentCallbacks2" target="android.content.ComponentCallbacks">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.SetUpProfileActivity" target="android.support.v7.app.AppCompatActivity">
+      <point x="38.25" y="-14.5" />
+      <point x="1421.75" y="721.0" />
+      <point x="1193.0" y="721.0" />
+      <point x="34.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.GroupAdapter" target="android.support.v7.widget.RecyclerView.Adapter">
+      <point x="0.0" y="-14.5" />
+      <point x="61.5" y="1038.0" />
+      <point x="116.5" y="1038.0" />
+      <point x="-22.5" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.ForgotPasswordActivity" target="android.support.v7.app.AppCompatActivity">
+      <point x="43.25" y="-14.5" />
+      <point x="443.71875" y="771.0" />
+      <point x="1091.0" y="771.0" />
+      <point x="-68.0" y="14.5" />
+    </edge>
+    <edge source="android.content.ContextWrapper" target="android.content.Context">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.andrei.meetyouupv11.EditProfileActivity" target="android.support.v7.app.AppCompatActivity">
+      <point x="35.5" y="-14.5" />
+      <point x="620.5" y="781.0" />
+      <point x="1108.0" y="781.0" />
+      <point x="-51.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6278776978417269" x="916.2437696934973" y="256.4477227155541" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,74 +1,74 @@
 package com.example.andrei.meetyouupv11.model;
 
-import android.net.Uri;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Profile {
 
-    //private String userId;
+    private String userId;
     private String name;
     private String keyWords;
     private String dateOfBirth;
     private String profileDescription;
     private String profilePictureUrl;
-    private List<String> friendsId = new ArrayList<>();
-    private List<String> pendingFriendsId = new ArrayList<>();
-    private float rating;
+    private List<String> pendingEvents = new ArrayList<>();
     private List<String> listOfGroups = new ArrayList<>();
     private List<String> listOfEvents = new ArrayList<>();
 
     public Profile() {
     }
 
-    public Profile(String name, String keyWords, String dateOfBirth, String profileDescription,
-                   String profilePictureUrl, List<String> friendsId, float rating, List<String> listOfGroups,
-                   List<String> listOfEvents, List<String> pendingFriendsId) {
+    public Profile(String userId, String name, String keyWords, String dateOfBirth, String profileDescription,
+                   String profilePictureUrl, List<String> pendingEvents, List<String> listOfGroups,
+                   List<String> listOfEvents) {
 
+        this.userId = userId;
         this.name = name;
         this.keyWords = keyWords;
         this.dateOfBirth = dateOfBirth;
         this.profileDescription = profileDescription;
         this.profilePictureUrl = profilePictureUrl;
-        this.friendsId = friendsId;
-        this.rating = rating;
+        this.pendingEvents = pendingEvents;
         this.listOfGroups = listOfGroups;
         this.listOfEvents = listOfEvents;
-        this.pendingFriendsId = pendingFriendsId;
     }
 
-    public Profile(String name, String keyWords, String dateOfBirth, String profileDescription, String profilePictureUrl) {
+    public Profile(String userId, String name, String keyWords, String dateOfBirth, String profileDescription, String profilePictureUrl) {
 
+        this.userId = userId;
         this.name = name;
         this.keyWords = keyWords;
         this.dateOfBirth = dateOfBirth;
         this.profileDescription = profileDescription;
         this.profilePictureUrl = profilePictureUrl;
-        this.addToFriendList("None");
-        this.rating = 0;
         this.addGroup("None");
         this.addEventsAttendance("None");
-        this.addToPendingFriends("None");
+        this.addToPendingEventsList("None");
+
     }
 
     public Profile(Profile other) {
 
+        this.userId = other.getUserId();
         this.name = other.getName();
         this.keyWords = other.getKeyWords();
         this.dateOfBirth = other.getDateOfBirth();
         this.profileDescription = other.getProfileDescription();
         this.profilePictureUrl = other.getProfilePictureUrl();
-        this.friendsId.clear();
-        this.friendsId.addAll(other.getFriendsId());
-        this.rating = other.getRating();
+        this.pendingEvents.clear();
+        this.pendingEvents.addAll(other.getPendingEvents());
         this.listOfGroups.clear();
         this.listOfGroups.addAll(other.getListOfGroups());
         this.listOfEvents.clear();
         this.listOfEvents.addAll(other.getListOfEvents());
-        this.pendingFriendsId.clear();
-        this.pendingFriendsId.addAll(other.getPendingFriendsId());
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -111,12 +111,12 @@ public class Profile {
         this.profilePictureUrl = profilePictureUrl;
     }
 
-    public List<String> getFriendsId() {
-        return friendsId;
+    public List<String> getPendingEvents() {
+        return pendingEvents;
     }
 
-    public void setFriendsId(List<String> friendsId) {
-        this.friendsId = friendsId;
+    public void setPendingEvents(List<String> pendingEvents) {
+        this.pendingEvents = pendingEvents;
     }
 
     public List<String> getListOfEvents() {
@@ -135,63 +135,36 @@ public class Profile {
         this.listOfGroups = listOfGroups;
     }
 
-    public List<String> getPendingFriendsId() {
-        return pendingFriendsId;
-    }
-
-    public void setPendingFriendsId(List<String> pendingFriendsId) {
-        this.pendingFriendsId = pendingFriendsId;
-    }
-
-    private void addToFriendList(String newUserId) {
-        if (newUserId.equals("None") && this.friendsId.size() == 0)
-            this.friendsId.add(newUserId);
-        else if (this.friendsId.get(0).equals("None") && this.friendsId.size() == 1) {
-            this.friendsId.clear();
-            this.friendsId.add(newUserId);
-        } else if (!this.friendsId.get(0).equals("None")) {
-            this.friendsId.add(newUserId);
+    public void addToPendingEventsList(String eventId) {
+        if (eventId.equals("None") && this.pendingEvents.size() == 0)
+            this.pendingEvents.add(eventId);
+        else if (this.pendingEvents.get(0).equals("None") && !eventId.equals("None")) {
+            this.pendingEvents.clear();
+            this.pendingEvents.add(eventId);
+        } else if (!this.pendingEvents.get(0).equals("None") && !this.pendingEvents.contains(eventId)) {
+            this.pendingEvents.add(eventId);
         }
     }
 
-    private void addGroup(String groupId) {
+    public void addGroup(String groupId) {
         if (groupId.equals("None") && this.listOfGroups.size() == 0) {
             this.listOfGroups.add(groupId);
-        } else if (this.listOfGroups.get(0).equals("None") && this.listOfGroups.size() == 1) {
+        } else if (this.listOfGroups.get(0).equals("None") && !groupId.equals("None")) {
             this.listOfGroups.clear();
             this.listOfGroups.add(groupId);
-        } else if (!this.listOfGroups.get(0).equals("None")) {
+        } else if (!this.listOfGroups.get(0).equals("None") && !listOfGroups.contains(groupId)) {
             this.listOfGroups.add(groupId);
         }
     }
 
-    private void addEventsAttendance(String eventId) {
+    public void addEventsAttendance(String eventId) {
         if (eventId.equals("None") && this.listOfEvents.size() == 0) {
             this.listOfEvents.add(eventId);
-        } else if (this.listOfEvents.get(0).equals("None") && this.listOfEvents.size() == 1) {
+        } else if (this.listOfEvents.get(0).equals("None") && !eventId.equals("None")) {
             this.listOfEvents.clear();
             this.listOfEvents.add(eventId);
-        } else if (!this.listOfEvents.get(0).equals("None")) {
+        } else if (!this.listOfEvents.get(0).equals("None") && !listOfEvents.contains(eventId)) {
             this.listOfEvents.add(eventId);
         }
-    }
-
-    private void addToPendingFriends(String newUserId) {
-        if (newUserId.equals("None") && this.pendingFriendsId.size() == 0)
-            this.pendingFriendsId.add(newUserId);
-        else if (this.pendingFriendsId.get(0).equals("None") && this.pendingFriendsId.size() == 1) {
-            this.pendingFriendsId.clear();
-            this.pendingFriendsId.add(newUserId);
-        } else if (!this.pendingFriendsId.get(0).equals("None")) {
-            this.pendingFriendsId.add(newUserId);
-        }
-    }
-
-    public float getRating() {
-        return rating;
-    }
-
-    public void setRating(float rating) {
-        this.rating = rating;
     }
 }

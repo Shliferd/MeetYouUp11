@@ -106,24 +106,24 @@ public class Group {
         this.groupPicture = groupPicture;
     }
 
-    private void addMembersToGroup(String newUserId) {
+    public void addMembersToGroup(String newUserId) {
         if (newUserId.equals("None") && this.membersId.size() == 0)
             this.membersId.add(newUserId);
-        else if (this.membersId.get(0).equals("None") && this.membersId.size() == 1) {
+        else if (this.membersId.get(0).equals("None") && !newUserId.equals("None")) {
             this.membersId.clear();
             this.membersId.add(newUserId);
-        } else if (!this.membersId.get(0).equals("None")) {
+        } else if (!this.membersId.get(0).equals("None") && !membersId.contains(newUserId)) {
             this.membersId.add(newUserId);
         }
     }
 
-    private void addEventToListGroup(String eventId) {
+    public void addEventToListGroup(String eventId) {
         if (eventId.equals("None") && this.listOfEventsInGroup.size() == 0) {
             this.listOfEventsInGroup.add(eventId);
-        } else if (this.listOfEventsInGroup.get(0).equals("None") && this.listOfEventsInGroup.size() == 1) {
+        } else if (this.listOfEventsInGroup.get(0).equals("None") && !eventId.equals("None")) {
             this.listOfEventsInGroup.clear();
             this.listOfEventsInGroup.add(eventId);
-        } else if (!this.listOfEventsInGroup.get(0).equals("None")) {
+        } else if (!this.listOfEventsInGroup.get(0).equals("None") && !listOfEventsInGroup.contains(eventId)) {
             this.listOfEventsInGroup.add(eventId);
         }
     }

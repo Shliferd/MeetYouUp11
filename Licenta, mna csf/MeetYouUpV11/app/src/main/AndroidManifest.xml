@@ -13,21 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginAndForgotPassword.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".SetUpProfileActivity" />
-        <activity android:name=".EditProfileActivity" />
-        <activity android:name=".GroupActivity" />
-        <activity android:name=".CreateGroupActivity" />
-        <activity android:name=".AddPeopleToGroupActivity"></activity>
+        <activity android:name=".Dashboard.DashboardActivity" />
+        <activity android:name=".LoginAndForgotPassword.ForgotPasswordActivity" />
+        <activity android:name=".Register.RegisterActivity" />
+        <activity android:name=".Register.SetUpProfileActivity" />
+        <activity android:name=".Dashboard.EditProfileActivity" />
+        <activity android:name=".Group.GroupActivity" />
+        <activity android:name=".Group.CreateGroupActivity" />
+        <activity android:name=".Group.AddPeopleToGroupActivity" />
+        <activity android:name=".Event.EventsToAttendActivity" />
+        <activity android:name=".Event.YourEventsActivity"></activity>
     </application>
 
 </manifest>
