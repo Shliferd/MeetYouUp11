@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Group.AddPeopleToGroupActivity">
+
+    <TextView
+        android:id="@+id/addPeopleToEventTextView"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Invite users to participate to your event"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnFinishAddPeopleToEvent"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addPeopleToEventTextView"
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="20dp"
+        android:background="#263238"
+        android:text="Finish inviting users" />
+
+    <EditText
+        android:id="@+id/searchPeopleToEvent"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnFinishAddPeopleToEvent"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/search_layout"
+        android:hint="Search here...              "
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:textColor="#999999"
+        android:textSize="16sp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSearchAddPeopleEvent"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/btnFinishAddPeopleToEvent"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/searchPeopleToEvent"
+        android:background="@drawable/searchpeople" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewAddPeopleToEvent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchPeopleToEvent"
+        android:layout_marginTop="50dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relLayoutProfiles"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frameLayoutGroupMembers"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/profilePicViewMembers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/deproba" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_round_profile_pic" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/nameViewMembers"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@id/frameLayoutGroupMembers"
+        android:text="Andrei Matea"
+        android:textColor="#000"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/showAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameViewMembers"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/frameLayoutGroupMembers"
+        android:text="Admin"
+        android:textColor="#1E90FF"
+        android:textSize="17dp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iconGoToUserProfile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@id/nameViewMembers"
+        android:src="@drawable/ic_go_to" />
+
+</RelativeLayout>

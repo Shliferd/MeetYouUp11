@@ -6,4 +6,8 @@
         <item>Your events</item>
         <item>Search events</item>
     </string-array>
+
+    <string name="google_maps_API_key">
+        AIzaSyCRwIgswKR56fcEvzizzV_dmX3xN3BTIPw
+    </string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddPeopleToGroupActivity">
+    tools:context=".Group.AddPeopleToGroupActivity">
 
     <TextView
         android:id="@+id/addPeopleToGroupTextView"
@@ -36,23 +36,22 @@
         android:layout_below="@id/btnFinishAddPeopleToGroup"
         android:layout_marginLeft="50dp"
         android:background="@drawable/search_layout"
+        android:hint="Search here...              "
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="10dp"
-        android:hint="Search here...              "
         android:textColor="#999999"
         android:textSize="16sp" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButtonSearchAddPeople"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:layout_alignParentEnd="true"
         android:layout_below="@+id/btnFinishAddPeopleToGroup"
-        android:layout_marginEnd="45dp"
-        android:background="@drawable/searchpeople"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/searchPeopleToGroup"
+        android:background="@drawable/searchpeople" />
 
 
     <android.support.v7.widget.RecyclerView

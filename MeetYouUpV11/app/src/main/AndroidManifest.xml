@@ -5,6 +5,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -13,21 +20,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCRwIgswKR56fcEvzizzV_dmX3xN3BTIPw" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".LoginAndForgotPassword.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".SetUpProfileActivity" />
-        <activity android:name=".EditProfileActivity" />
-        <activity android:name=".GroupActivity" />
-        <activity android:name=".CreateGroupActivity" />
-        <activity android:name=".AddPeopleToGroupActivity"></activity>
+        <activity android:name=".Dashboard.DashboardActivity" />
+        <activity android:name=".LoginAndForgotPassword.ForgotPasswordActivity" />
+        <activity android:name=".Register.RegisterActivity" />
+        <activity android:name=".Register.SetUpProfileActivity" />
+        <activity android:name=".Dashboard.EditProfileActivity" />
+        <activity android:name=".Group.GroupActivity" />
+        <activity android:name=".Group.CreateGroupActivity" />
+        <activity android:name=".Group.AddPeopleToGroupActivity" />
+        <activity android:name=".Event.EventsToAttendActivity" />
+        <activity android:name=".Event.YourEventsActivity" />
+        <activity android:name=".Event.AddEventActivity" />
+        <activity
+            android:name=".Event.AddEventActivityPart2"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Event.AddEventActivityPart3" />
+        <activity android:name=".Event.SeePendingEventsActivity" />
+        <activity android:name=".Group.GroupInfoActivity" />
+        <activity android:name=".Group.ViewGroupMembersActivity" />
+        <activity android:name=".UserProfile.UserProfileActivity" />
+        <activity android:name=".Event.EventInfoActivity" />
+        <activity android:name=".Event.WaitingForResponseActivity" />
+        <activity android:name=".Event.ManageByAdminAcceptActivity"></activity>
     </application>
 
 </manifest>

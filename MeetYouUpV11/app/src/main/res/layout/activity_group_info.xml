@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Group.GroupInfoActivity">
+
+    <ImageView
+        android:id="@+id/groupInfoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/groupInfoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/groupInfoImageView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="Group name"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/groupInfoDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/groupInfoName"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:text="Group desc"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/groupInfoNumberOfMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/groupInfoDesc"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="12 members"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/groupInfoSeeMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/groupInfoDesc"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/groupInfoNumberOfMembers"
+        android:clickable="true"
+        android:text="See members"
+        android:textColor="#1E90FF"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/textViewAboutEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/groupInfoNumberOfMembers"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="These are the events in this group: "
+        android:textSize="17dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewGroupInfoWithEvents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textViewAboutEvents"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>

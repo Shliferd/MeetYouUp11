@@ -12,6 +12,7 @@ public class Group {
     private List<String> membersId = new ArrayList<>();
     private List<String> listOfEventsInGroup = new ArrayList<>();
     private String groupPicture;
+    private String groupId;
 
     public Group() {
     }
@@ -48,6 +49,14 @@ public class Group {
         this.membersId.addAll(other.getMembersId());
         this.listOfEventsInGroup.clear();
         this.listOfEventsInGroup.addAll(other.getListOfEventsInGroup());
+    }
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public String getGroupName() {
@@ -125,6 +134,15 @@ public class Group {
             this.listOfEventsInGroup.add(eventId);
         } else if (!this.listOfEventsInGroup.get(0).equals("None") && !listOfEventsInGroup.contains(eventId)) {
             this.listOfEventsInGroup.add(eventId);
+        }
+    }
+
+    public void removeFromListOfGroups(String eventId) {
+        if (this.getListOfEventsInGroup().contains(eventId)) {
+            this.listOfEventsInGroup.remove(eventId);
+            if (listOfEventsInGroup.isEmpty()) {
+                listOfEventsInGroup.add("None");
+            }
         }
     }
 }

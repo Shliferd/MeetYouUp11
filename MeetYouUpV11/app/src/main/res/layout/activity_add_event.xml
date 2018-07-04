@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Event.AddEventActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewAddEventPart1Title"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Setup the informations and the type of your event"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextAddEventPart1Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewAddEventPart1Title"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
+            android:hint="Enter event name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextAddEventPart1Desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextAddEventPart1Name"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
+            android:hint="Enter event description"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextAddEventPart1KeyWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextAddEventPart1Desc"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
+            android:hint="Enter event key words"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textViewAddEventPart1Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextAddEventPart1KeyWords"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="15dp"
+            android:hint="Select your event date"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btnAddEventPart1Photo"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewAddEventPart1Date"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="25dp"
+            android:background="#263238"
+            android:text="Upload event cover photo" />
+
+        <ImageView
+            android:id="@+id/imageViewAddEventPart1Pic"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/btnAddEventPart1Photo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/noimguploded" />
+
+        <TextView
+            android:id="@+id/textViewAddEventPart1Middle"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageViewAddEventPart1Pic"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:text="Select your type of event"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupAddEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewAddEventPart1Middle"
+            android:layout_marginLeft="50dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonPrivate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkPrivate"
+                android:text="Private" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPublic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:checked="true"
+                android:onClick="checkPublic"
+                android:text="Public" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textViewAddEventRadioPrivate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioGroupAddEvent"
+            android:layout_marginHorizontal="10dp"
+            android:text="Within private events only you can add people to participate. These events can not be shared to groups"
+            android:textSize="16dp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutAddEventCombo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textViewAddEventRadioPrivate"
+            android:layout_marginTop="20dp">
+
+            <CheckBox
+                android:id="@+id/checkBoxNumberLimit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:onClick="showEditTextNumberOfParticipants"
+                android:text="Add limit number for event participants" />
+
+            <EditText
+                android:id="@+id/editTextAddEventPart1NumberLimit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkBoxNumberLimit"
+                android:layout_marginHorizontal="50dp"
+                android:hint="Enter number limit"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/checkBoxAdminAccept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextAddEventPart1NumberLimit"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Users join by admin accept" />
+
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnAddEventPart1ToMap"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayoutAddEventCombo"
+            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="25dp"
+            android:background="#263238"
+            android:text="Continue" />
+
+    </RelativeLayout>
+
+</ScrollView>

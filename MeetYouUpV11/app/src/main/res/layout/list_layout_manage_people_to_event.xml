@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/frameLayoutByAdminAcc"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/profilePicAccOrNot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/deproba" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_round_profile_pic" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/nameAccOrNot"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@id/frameLayoutByAdminAcc"
+        android:text="Andrei Matea"
+        android:textColor="#555555"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/iconAccOrNotAccept"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/frameLayoutByAdminAcc"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_accept" />
+
+    <ImageView
+        android:id="@+id/iconAccOrNotDecline"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/frameLayoutByAdminAcc"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/iconAccOrNotAccept"
+        android:background="@drawable/square_border"
+        android:src="@drawable/ic_decline" />
+
+
+</RelativeLayout>

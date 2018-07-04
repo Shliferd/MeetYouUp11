@@ -4,18 +4,18 @@
     android:layout_height="wrap_content"
     android:padding="10dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/textViewEditProfileWelcome"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginHorizontal="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:text="Here a user can change his profile informations"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
@@ -24,7 +24,8 @@
             android:id="@+id/editTextEditProfileName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
+            android:layout_below="@+id/textViewEditProfileWelcome"
+            android:layout_centerHorizontal="true"
             android:hint="Enter your name"
             android:inputType="text"
             android:maxLines="1"
@@ -34,7 +35,8 @@
             android:id="@+id/editTextEditProfileDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
+            android:layout_below="@+id/editTextEditProfileName"
+            android:layout_centerHorizontal="true"
             android:hint="Enter a description for profile"
             android:inputType="text"
             android:padding="10dp" />
@@ -43,7 +45,8 @@
             android:id="@+id/textViewEditProfileDateOfBirth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
+            android:layout_below="@+id/editTextEditProfileDescription"
+            android:layout_centerHorizontal="true"
             android:hint="Select your date of birth"
             android:padding="10dp"
             android:textSize="18dp" />
@@ -52,7 +55,8 @@
             android:id="@+id/editTextEditProfileKeyWords"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
+            android:layout_below="@+id/textViewEditProfileDateOfBirth"
+            android:layout_centerHorizontal="true"
             android:hint="Key words for events"
             android:inputType="text"
             android:padding="10dp" />
@@ -60,18 +64,21 @@
         <Button
             android:id="@+id/btnUploadPhotoEditProfile"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
+            android:layout_below="@+id/editTextEditProfileKeyWords"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:background="#263238"
+            android:padding="10dp"
             android:text="Change profile picture" />
 
         <ImageView
             android:id="@+id/imageViewEditProfileProfilePic"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginHorizontal="85dp"
+            android:layout_below="@+id/btnUploadPhotoEditProfile"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:background="@drawable/noimageuser" />
 
@@ -80,11 +87,12 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/imageViewEditProfileProfilePic"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
-            android:layout_marginHorizontal="50dp"
             android:layout_marginTop="10dp"
             android:background="#263238"
             android:text="Finish editing profile" />
-    </LinearLayout>
+    </RelativeLayout>
 
 </ScrollView>

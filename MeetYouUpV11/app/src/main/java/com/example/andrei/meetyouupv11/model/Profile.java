@@ -11,30 +11,15 @@ public class Profile {
     private String dateOfBirth;
     private String profileDescription;
     private String profilePictureUrl;
-    private List<String> pendingEvents = new ArrayList<>();
     private List<String> listOfGroups = new ArrayList<>();
     private List<String> listOfEvents = new ArrayList<>();
+    private List<String> pendingEvents = new ArrayList<>();
+    private List<String> declinedEvents = new ArrayList<>();
 
     public Profile() {
     }
 
-    public Profile(String userId, String name, String keyWords, String dateOfBirth, String profileDescription,
-                   String profilePictureUrl, List<String> pendingEvents, List<String> listOfGroups,
-                   List<String> listOfEvents) {
-
-        this.userId = userId;
-        this.name = name;
-        this.keyWords = keyWords;
-        this.dateOfBirth = dateOfBirth;
-        this.profileDescription = profileDescription;
-        this.profilePictureUrl = profilePictureUrl;
-        this.pendingEvents = pendingEvents;
-        this.listOfGroups = listOfGroups;
-        this.listOfEvents = listOfEvents;
-    }
-
     public Profile(String userId, String name, String keyWords, String dateOfBirth, String profileDescription, String profilePictureUrl) {
-
         this.userId = userId;
         this.name = name;
         this.keyWords = keyWords;
@@ -44,23 +29,7 @@ public class Profile {
         this.addGroup("None");
         this.addEventsAttendance("None");
         this.addToPendingEventsList("None");
-
-    }
-
-    public Profile(Profile other) {
-
-        this.userId = other.getUserId();
-        this.name = other.getName();
-        this.keyWords = other.getKeyWords();
-        this.dateOfBirth = other.getDateOfBirth();
-        this.profileDescription = other.getProfileDescription();
-        this.profilePictureUrl = other.getProfilePictureUrl();
-        this.pendingEvents.clear();
-        this.pendingEvents.addAll(other.getPendingEvents());
-        this.listOfGroups.clear();
-        this.listOfGroups.addAll(other.getListOfGroups());
-        this.listOfEvents.clear();
-        this.listOfEvents.addAll(other.getListOfEvents());
+        this.addDeclinedEvent("None");
     }
 
     public String getUserId() {
@@ -111,12 +80,12 @@ public class Profile {
         this.profilePictureUrl = profilePictureUrl;
     }
 
-    public List<String> getPendingEvents() {
-        return pendingEvents;
+    public List<String> getListOfGroups() {
+        return listOfGroups;
     }
 
-    public void setPendingEvents(List<String> pendingEvents) {
-        this.pendingEvents = pendingEvents;
+    public void setListOfGroups(List<String> listOfGroups) {
+        this.listOfGroups = listOfGroups;
     }
 
     public List<String> getListOfEvents() {
@@ -127,44 +96,99 @@ public class Profile {
         this.listOfEvents = listOfEvents;
     }
 
-    public List<String> getListOfGroups() {
-        return listOfGroups;
+    public List<String> getPendingEvents() {
+        return pendingEvents;
     }
 
-    public void setListOfGroups(List<String> listOfGroups) {
-        this.listOfGroups = listOfGroups;
+    public void setPendingEvents(List<String> pendingEvents) {
+        this.pendingEvents = pendingEvents;
+    }
+
+    public List<String> getDeclinedEvents() {
+        return declinedEvents;
+    }
+
+    public void setDeclinedEvents(List<String> declinedEvents) {
+        this.declinedEvents = declinedEvents;
+    }
+
+    public void addEventsAttendance(String eventId) {
+        if (this.listOfEvents.isEmpty()) {
+            this.listOfEvents.add(eventId);
+        } else if (this.listOfEvents.get(0).equals("None")) {
+            this.listOfEvents.clear();
+            this.listOfEvents.add(eventId);
+        } else if (!eventId.equals("None")) {
+            this.listOfEvents.add(eventId);
+        }
     }
 
     public void addToPendingEventsList(String eventId) {
-        if (eventId.equals("None") && this.pendingEvents.size() == 0)
+        if (this.pendingEvents.isEmpty()) {
             this.pendingEvents.add(eventId);
-        else if (this.pendingEvents.get(0).equals("None") && !eventId.equals("None")) {
+        } else if (this.pendingEvents.get(0).equals("None")) {
             this.pendingEvents.clear();
             this.pendingEvents.add(eventId);
-        } else if (!this.pendingEvents.get(0).equals("None") && !this.pendingEvents.contains(eventId)) {
+        } else if (!eventId.equals("None")) {
             this.pendingEvents.add(eventId);
+        }
+    }
+
+    public void addDeclinedEvent(String eventId) {
+        if (this.declinedEvents.isEmpty()) {
+            this.declinedEvents.add(eventId);
+        } else if (this.declinedEvents.get(0).equals("None")) {
+            this.declinedEvents.clear();
+            this.declinedEvents.add(eventId);
+        } else if (!eventId.equals("None")) {
+            this.declinedEvents.add(eventId);
         }
     }
 
     public void addGroup(String groupId) {
-        if (groupId.equals("None") && this.listOfGroups.size() == 0) {
+        if (this.listOfGroups.isEmpty()) {
             this.listOfGroups.add(groupId);
-        } else if (this.listOfGroups.get(0).equals("None") && !groupId.equals("None")) {
+        } else if (this.listOfGroups.get(0).equals("None")) {
             this.listOfGroups.clear();
             this.listOfGroups.add(groupId);
-        } else if (!this.listOfGroups.get(0).equals("None") && !listOfGroups.contains(groupId)) {
+        } else if (!groupId.equals("None")) {
             this.listOfGroups.add(groupId);
         }
     }
 
-    public void addEventsAttendance(String eventId) {
-        if (eventId.equals("None") && this.listOfEvents.size() == 0) {
-            this.listOfEvents.add(eventId);
-        } else if (this.listOfEvents.get(0).equals("None") && !eventId.equals("None")) {
-            this.listOfEvents.clear();
-            this.listOfEvents.add(eventId);
-        } else if (!this.listOfEvents.get(0).equals("None") && !listOfEvents.contains(eventId)) {
-            this.listOfEvents.add(eventId);
+    public void removeFromDeclinedEvents(String eventId) {
+        if (this.getDeclinedEvents().contains(eventId)) {
+            this.declinedEvents.remove(eventId);
+            if (declinedEvents.isEmpty()) {
+                this.declinedEvents.add("None");
+            }
+        }
+    }
+
+    public void removeFromPendingEvents(String eventId) {
+        if (this.getPendingEvents().contains(eventId)) {
+            this.pendingEvents.remove(eventId);
+            if (pendingEvents.isEmpty()) {
+                this.pendingEvents.add("None");
+            }
+        }
+    }
+
+    public void removeFromlistOfEvents(String eventId) {
+        if (this.getPendingEvents().contains(eventId)) {
+            this.listOfEvents.remove(eventId);
+            if (listOfEvents.isEmpty()) {
+                this.listOfEvents.add("None");
+            }
+        }
+    }
+
+    public void removeFromlistOfGroups(String eventId) {
+        if (this.getListOfGroups().contains(eventId)) {
+            this.listOfGroups.remove(eventId);
+            if (listOfGroups.isEmpty()) {
+                this.listOfGroups.add("None");
+            }
         }
     }
 }
